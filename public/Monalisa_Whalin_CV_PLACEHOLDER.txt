@@ -1,0 +1,3 @@
+Placeholder CV file.
+
+Replace this file with /public/Monalisa_Whalin_CV.pdf to enable the `download` command for a real PDF.
