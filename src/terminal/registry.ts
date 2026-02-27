@@ -15,6 +15,7 @@ export type TerminalContext = {
   setGrid: (on: boolean, intensity?: number) => void;
   setMatrix: (on: boolean) => void;
   markResumeUnlocked: () => void;
+  resumeUnlocked: boolean;
 };
 
 export type CommandHandler = (ctx: TerminalContext, args: string[]) => TerminalLine[];
@@ -99,7 +100,6 @@ export const commandHandlers: Record<string, CommandHandler> = {
   sudo: (_ctx, args) => [text(args.join(" ").toLowerCase() === "hire mona" ? "Permission granted. Welcome to the team." : "sudo: command denied")],
   resume: (ctx) => {
     ["identity", "skills", "projects", "vision"].forEach((layer) => ctx.unlock(layer as Layer));
-    ctx.markResumeUnlocked();
     return [text("Full resume unlocked. Run experience, projects, skills, timeline, contact.")];
   }
 };
@@ -107,8 +107,10 @@ export const commandHandlers: Record<string, CommandHandler> = {
 export const runCommand = (ctx: TerminalContext, command: string, args: string[]): TerminalLine[] => {
   const handler = commandHandlers[command.toLowerCase()];
   if (!handler) return [text(`Unknown command: ${command}. Try help`)];
+  const wasComplete = ctx.resumeUnlocked || ctx.unlocked.size >= 4;
   const lines = handler(ctx, args);
-  if (ctx.unlocked.size >= 4) ctx.markResumeUnlocked();
+  const isComplete = ctx.unlocked.size >= 4;
+  if (!wasComplete && isComplete) ctx.markResumeUnlocked();
   return lines;
 };
 
