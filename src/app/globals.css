@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #02040c;
+  --fg: #d9f7ff;
+  --neon: #39d0ff;
+  --neon2: #6ef2ff;
+  --grid: rgba(57, 208, 255, 0.2);
+  --glow: 65;
+  --grid-intensity: 40;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--neon) 25%, transparent);
+}
+
+.neon-text {
+  text-shadow: 0 0 calc(var(--glow) * 0.02px + 4px) color-mix(in srgb, var(--neon) 70%, white);
+}
+
+.neon-border {
+  border: 1px solid color-mix(in srgb, var(--neon) 70%, white);
+  box-shadow: 0 0 calc(var(--glow) * 0.05px + 8px) color-mix(in srgb, var(--neon) 45%, transparent), inset 0 0 12px color-mix(in srgb, var(--neon2) 15%, transparent);
+}
+
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: calc(var(--grid-intensity) / 100);
+  background:
+    repeating-linear-gradient(0deg, transparent 0 39px, var(--grid) 40px),
+    repeating-linear-gradient(90deg, transparent 0 39px, var(--grid) 40px),
+    radial-gradient(circle at center, rgba(6, 17, 36, 0.9), #010109 70%);
+}
+
+.grid-bg.animate {
+  animation: gridShift 12s linear infinite;
+}
+
+@keyframes gridShift {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(40px); }
+}
+
+.matrix-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.15;
+  background-image: linear-gradient(transparent 0%, rgba(0, 255, 157, 0.3) 50%, transparent 100%);
+  background-size: 100% 8px;
+  animation: scanline 2s linear infinite;
+}
+
+@keyframes scanline {
+  from { background-position-y: 0; }
+  to { background-position-y: 8px; }
+}
+
+.cursor {
+  width: 10px;
+  height: 1.2em;
+  background: var(--neon);
+  display: inline-block;
+  vertical-align: bottom;
+  animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-bg.animate,
+  .matrix-bg,
+  .cursor {
+    animation: none !important;
+  }
+}
+
+a { color: var(--neon2); }
+a:hover { opacity: 0.9; }

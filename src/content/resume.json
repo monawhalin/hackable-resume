@@ -1,0 +1,117 @@
+{
+  "basics": {
+    "name": "Monalisa Whalin",
+    "headline": "AI Product Leader | Builder of intelligent products and durable teams",
+    "location": "Austin, TX",
+    "summary": "Product executive focused on AI-native platforms, human-in-the-loop systems, and responsible automation. I partner with engineering and design to ship products that create measurable customer and business impact."
+  },
+  "links": {
+    "linkedin": "https://linkedin.com/in/monalisa-whalin",
+    "github": "https://github.com/monalisa-whalin",
+    "website": "https://monalisa-whalin.dev"
+  },
+  "experience": [
+    {
+      "company": "NovaGrid AI",
+      "role": "VP of Product",
+      "dates": "2021 - Present",
+      "bullets": [
+        "Scaled an AI operations suite from 0 to $14M ARR across enterprise customers.",
+        "Led a 28-person cross-functional org spanning product, design, and PMM.",
+        "Reduced model incident response time by 42% via observability workflows."
+      ],
+      "tags": ["AI Platforms", "B2B SaaS", "Leadership"]
+    },
+    {
+      "company": "Orbit Systems",
+      "role": "Director of Product",
+      "dates": "2018 - 2021",
+      "bullets": [
+        "Launched experimentation framework increasing feature adoption by 31%.",
+        "Built strategic roadmap process linking quarterly goals to customer outcomes.",
+        "Partnered with sales on enterprise packaging and pricing strategy."
+      ],
+      "tags": ["Growth", "Pricing", "Experimentation"]
+    },
+    {
+      "company": "Helios Labs",
+      "role": "Senior Product Manager",
+      "dates": "2014 - 2018",
+      "bullets": [
+        "Owned core analytics product used by 120k monthly active users.",
+        "Introduced voice-of-customer program that improved NPS by 17 points.",
+        "Mentored early-career PMs and established product craftsmanship standards."
+      ],
+      "tags": ["Analytics", "Customer Research", "Mentorship"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "ModelOps Command Center",
+      "slug": "modelops-command-center",
+      "description": "Operational cockpit for monitoring, rollback, and compliance workflows across LLM applications.",
+      "tech": ["Next.js", "TypeScript", "Python", "Kubernetes"],
+      "links": {
+        "repo": "https://github.com/monalisa-whalin/modelops-command-center",
+        "live": "https://demo.modelops-grid.dev"
+      },
+      "highlights": [
+        "Reduced false positive incident alerts by 58%.",
+        "Introduced policy templates for SOC2 and HIPAA environments."
+      ]
+    },
+    {
+      "name": "Prompt QA Pipeline",
+      "slug": "prompt-qa-pipeline",
+      "description": "Evaluation harness for prompt versioning, scoring, and regression tracking.",
+      "tech": ["Node.js", "PostgreSQL", "OpenTelemetry"],
+      "links": {
+        "repo": "https://github.com/monalisa-whalin/prompt-qa-pipeline"
+      },
+      "highlights": [
+        "Cut release risk through automated quality gates.",
+        "Enabled non-technical teams to review model behavior changes."
+      ]
+    },
+    {
+      "name": "Signal Mentor",
+      "slug": "signal-mentor",
+      "description": "AI coaching assistant for managers running 1:1s and career planning conversations.",
+      "tech": ["React", "TypeScript", "FastAPI"],
+      "links": {
+        "repo": "https://github.com/monalisa-whalin/signal-mentor",
+        "live": "https://signal-mentor.app"
+      },
+      "highlights": [
+        "Piloted with 40 managers; 87% reported improved conversation quality.",
+        "Designed privacy-forward architecture with local-first note encryption."
+      ]
+    }
+  ],
+  "skills": {
+    "Product Leadership": ["Strategy", "Roadmapping", "Org Design", "Stakeholder Alignment"],
+    "AI & Data": ["LLM Productization", "Model Evaluation", "Responsible AI", "Experiment Design"],
+    "Execution": ["Agile Delivery", "Analytics", "Pricing", "Go-to-Market Collaboration"],
+    "Tools": ["Figma", "Amplitude", "SQL", "Notion", "Jira"]
+  },
+  "education": [
+    {
+      "institution": "University of Washington",
+      "degree": "B.S. in Informatics",
+      "dates": "2010 - 2014"
+    }
+  ],
+  "awards_or_speaking": [
+    "Speaker, ProductCon: Designing Human-Centered AI Teams (2024)",
+    "Top 50 Women in Product nominee (2023)",
+    "Guest lecturer on AI product ethics at UT Austin"
+  ],
+  "contact": {
+    "email": "mona@example.com",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/monalisa-whalin",
+      "github": "https://github.com/monalisa-whalin",
+      "x": "https://x.com/mona_whalin"
+    }
+  }
+}
