@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import AchievementOverlay from "./AchievementOverlay";
 import BootSequence from "./BootSequence";
@@ -20,12 +20,12 @@ export default function TerminalShell() {
     return ach ? decodeAchievement(ach) : null;
   }, [searchParams]);
 
+  useEffect(() => {
+    saveState(state);
+  }, [state]);
+
   const update = (patch: Partial<PersistedState>) => {
-    setState((prev) => {
-      const next = { ...prev, ...patch };
-      saveState(next);
-      return next;
-    });
+    setState((prev) => ({ ...prev, ...patch }));
   };
 
   const updatePrefs = (prefs: Partial<Preferences>) => {
@@ -59,6 +59,8 @@ export default function TerminalShell() {
           />
         </div>
         <Terminal
+          state={state}
+          setState={setState}
           onAchievement={(payload) => {
             setAchievement(payload);
             update({ lastCompletionMs: payload.completionMs, unlockedLayers: ["identity", "skills", "projects", "vision"] });
